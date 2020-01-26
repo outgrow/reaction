@@ -43,6 +43,8 @@ import registerTaxesRatesPlugin from "./plugins/taxes-rates/index.js";
 import registerTestAddressValidationPlugin from "./plugins/address-validation-test/index.js";
 import registerTranslationsPlugin from "./plugins/translations/index.js";
 
+import registerDummyDataGenerator from "@outgrow/reaction-dummy-data-generator/index.js";
+
 /**
  * @summary A function in which you should call `register` function for each API plugin,
  *   in the order in which you want to register them.
@@ -152,4 +154,6 @@ export default async function registerPlugins(app) {
    */
   await registerNotificationsPlugin(app); // OPTIONAL
   await registerTestAddressValidationPlugin(app); // OPTIONAL
+
+  await registerDummyDataGenerator(app);
 }
