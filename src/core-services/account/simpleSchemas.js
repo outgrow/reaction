@@ -367,6 +367,9 @@ export const Account = new SimpleSchema({
   "updatedAt": {
     type: Date,
     optional: true
+  },
+  "adminUIShopIds": {
+    type: Array
   }
 });
 
