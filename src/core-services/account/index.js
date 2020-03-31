@@ -6,6 +6,9 @@ import resolvers from "./resolvers/index.js";
 import schemas from "./schemas/index.js";
 import accountByUserId from "./util/accountByUserId.js";
 import { Account, Group } from "./simpleSchemas.js";
+import accountsPreStartup from "./preStartup.js";
+
+export { default as migrations } from "./migrations/index.js";
 
 /**
  * @summary Import and call this function to add this plugin to your API.
@@ -42,6 +45,9 @@ export default async function register(app) {
     },
     auth: {
       accountByUserId
+    },
+    functionsByType: {
+      preStartup: [accountsPreStartup]
     },
     graphQL: {
       resolvers,
