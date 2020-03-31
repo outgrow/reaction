@@ -370,6 +370,9 @@ export const Account = new SimpleSchema({
   },
   "adminUIShopIds": {
     type: Array
+  },
+  "adminUIShopIds.$": {
+    type: String
   }
 });
 
